@@ -2,6 +2,29 @@
 #include <assert.h>
 #include "ksw2.h"
 
+#ifndef SIMDE_ENABLE_NATIVE_ALIASES
+#define SIMDE_ENABLE_NATIVE_ALIASES 1
+#endif
+
+#ifdef __aarch64__
+#include<simde/x86/avx.h>
+#include<simde/x86/clmul.h>
+#include<simde/x86/gfni.h>
+#include<simde/x86/sse2.h>
+#include<simde/x86/sse4.2.h>
+#include<simde/x86/xop.h>
+#include<simde/x86/avx2.h>
+#include<simde/x86/f16c.h>
+#include<simde/x86/mmx.h>
+#include<simde/x86/sse3.h>
+#include<simde/x86/ssse3.h>
+#include<simde/x86/avx512.h>
+#include<simde/x86/fma.h>
+#include<simde/x86/sse.h>
+#include<simde/x86/sse4.1.h>
+#include<simde/x86/svml.h>
+#endif
+
 #ifdef __SSE2__
 #include <emmintrin.h>
 

@@ -1,9 +1,9 @@
-CXX=		g++
-CC=			gcc
-CXXFLAGS=	-g -O3 -msse4.2 -mpopcnt -fomit-frame-pointer -Wall
+CXX?=		g++
+CC?=			gcc
+CXXFLAGS=	-g -O3 -march=native -fomit-frame-pointer -Wall -DSIMDE_ENABLE_NATIVE_ALIASES=1
 CFLAGS=		$(CXXFLAGS)
 CPPFLAGS=
-INCLUDES=
+INCLUDES= -Isimde
 OBJS=		CommandLines.o Process_Read.o Assembly.o Hash_Table.o \
 			POA.o Correct.o Levenshtein_distance.o Overlaps.o Trio.o kthread.o Purge_Dups.o \
 			htab.o hist.o sketch.o anchor.o extract.o sys.o hic.o rcut.o horder.o \
